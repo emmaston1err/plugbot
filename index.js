@@ -84,13 +84,13 @@ What Makes Us Different
       .addOptions([
         {
           label: 'Nitro',
-          description: 'Classic & Boosted Nitro options',
+          description: 'Classic & Boosted Nitro Options',
           value: 'nitro',
           emoji: '<a:plug_nitro:1374801855389106216>',
         },
         {
           label: 'Boosts',
-          description: 'Stable & Premium Boost packages',
+          description: 'Stable & Premium Boost Packages',
           value: 'boosts',
           emoji: '<a:plug_boosts:1374801892152053912>',
         },

@@ -118,6 +118,60 @@ client.on('interactionCreate', async interaction => {
       });
     }
   }
+}
+         // ✅ Όταν κάποιος πατήσει επιλογή από το dropdown
+  if (interaction.isStringSelectMenu()) {
+    const selected = interaction.values[0];
+
+    if (selected === 'nitro') {
+      const nitroEmbed = new EmbedBuilder()
+        .setColor(0xD391FA)
+        .setTitle('Discord Nitro')
+        .setDescription(`
+**Instant & legal**
+
+## Nitro Boosts [ via login ] <:plug_login:1374803692300298342>
+<:plug_boost:1374801892152053912> Nitro Boost 1 Month — **$6.5**  
+<:plug_boost:1374801892152053912> Nitro Boost 12 Month — **$55.5**
+
+## Nitro Basic [ via login ] <:plug_login:1374803692300298342>
+<:plug_nitro:1374801855389106216> Nitro Basic 1 Month — **$1.99**  
+<:plug_nitro:1374801855389106216> Nitro Basic 12 Month — **$22.5**
+
+## 🧾 Payment Methods  
+<:plug_trc:1374802353647286344> TRC-20  &  <:plug_usdt:1374802351137445909> USDT
+
+## ⭐ Features
+> ✅ Legally Paid  
+> ⚡ Fast activation within minutes  
+> 🔐 We only log in to activate — full privacy respected  
+> 🛡️ We recommend enabling **2FA**  
+> 💬 Full guarantee for any issue
+        `)
+        .setFooter({
+          text: 'NitroPlug • Trusted Discord Services',
+          iconURL: 'https://i.imgur.com/TRZTCKT.png',
+        });
+
+      const button = new ActionRowBuilder().addComponents(
+        {
+          type: 2, // BUTTON
+          style: 5, // Link button
+          label: 'Start Order',
+          url: 'https://example.com/order', // βάλε το πραγματικό σου link
+          emoji: '🛒',
+        }
+      );
+
+      await interaction.reply({
+        embeds: [nitroEmbed],
+        components: [button],
+        ephemeral: true,
+      });
+    }
+
+    // Εδώ μπορείς να βάλεις και το BOOSTS αν θες να κάνει κάτι αντίστοιχο
+  }
 });
 
 client.login(process.env.TOKEN);

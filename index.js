@@ -56,7 +56,7 @@ client.once('ready', async () => {
   if (channel && channel.type === ChannelType.GuildText) {
     const embed = new EmbedBuilder()
       .setColor(0xD391FA)
-      .setTitle('**<:plug_ticket:1374774141873295381> Buy**')
+      .setTitle('**<a:plug_buy:1374809315525001301> Buy**')
       .setDescription(`
 Browse Our Selection
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>

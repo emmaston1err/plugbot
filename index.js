@@ -55,6 +55,7 @@ client.once('ready', async () => {
   const channel = client.channels.cache.get('1373321172841664666');
   if (channel && channel.type === ChannelType.GuildText) {
     const embed = new EmbedBuilder()
+      .setColor(0xD391FA)
       .setTitle('**<:plug_ticket:1374774141873295381> Ticket**')
       .setDescription(`
 Browse Our Selection
@@ -85,13 +86,13 @@ What Makes Us Different
           label: 'Nitro',
           description: 'Classic & Boosted Nitro options',
           value: 'nitro',
-          emoji: '💖',
+          emoji: '<a:plug_nitro:1374801855389106216>',
         },
         {
           label: 'Boosts',
           description: 'Stable & Premium Boost packages',
           value: 'boosts',
-          emoji: '🚀',
+          emoji: '<a:plug_boosts:1374801892152053912>',
         },
       ]);
 

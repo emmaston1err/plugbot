@@ -166,19 +166,14 @@ What You Get
           .setEmoji('🛒')
       );
 
-      if (interaction.deferred || interaction.replied) {
-  await interaction.followUp({
-    embeds: [embed1, embed2],
-    components: [button],
-    ephemeral: true
-  });
-} else {
-  await interaction.reply({
-    embeds: [embed1, embed2],
-    components: [button],
-    ephemeral: true
-  });
+      if (!interaction.deferred && !interaction.replied) {
+  await interaction.deferReply({ ephemeral: true });
 }
+
+await interaction.editReply({
+  embeds: [embed1, embed2],
+  components: [button]
+});
 
 
     }

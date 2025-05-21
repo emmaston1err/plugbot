@@ -126,13 +126,13 @@ client.on('interactionCreate', async interaction => {
     if (selected === 'nitro') {
       const nitroEmbed = new EmbedBuilder()
         .setColor(0xD391FA)
-        .setTitle('Discord Nitro')
+        .setTitle('**Discord Nitro Deals**')
         .setDescription(`
-**Instant & legal**
-
-## Nitro Boosts [ via login ] <:plug_login:1374803692300298342>
-<:plug_boost:1374801892152053912> Nitro Boost 1 Month — **$6.5**  
-<:plug_boost:1374801892152053912> Nitro Boost 12 Month — **$55.5**
+Fast • Legit • Safe
+<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+<a:plug_nitro:1374801855389106216> Nitro Boost [Login Method]
+> <:plug_boost:1374812787976700016> Nitro Boost 1 Month <:plug_arrow:1374782493491728394> **$6**
+> <:plug_booster:1374812926132752414> Nitro Boost 3 Months <:plug_arrow:1374782493491728394> **$9**
 
 ## Nitro Basic [ via login ] <:plug_login:1374803692300298342>
 <:plug_nitro:1374801855389106216> Nitro Basic 1 Month — **$1.99**  

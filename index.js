@@ -67,17 +67,17 @@ Browse Our Selection
 
 What Makes Us Different
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-<:plug_arrow:1374782493491728394> • Zero Risk – 100% Safe & Verified Offers
-<:plug_arrow:1374782493491728394> • Instant Delivery – No Waiting Around
-<:plug_arrow:1374782493491728394> • Budget-Friendly – Premium Service At Low Prices
-<:plug_arrow:1374782493491728394> • Round-The-Clock Help – Support When You Need It, Always
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-**:warning: Important Notice**
+<:plug_arrow:1374782493491728394> • Zero Risk – 100% Safe & Verified Offers  
+<:plug_arrow:1374782493491728394> • Instant Delivery – No Waiting Around  
+<:plug_arrow:1374782493491728394> • Budget-Friendly – Premium Service At Low Prices  
+<:plug_arrow:1374782493491728394> • Round-The-Clock Help – Support When You Need It, Always  
+
+**:warning: Important Notice**  
 <a:plug_impression:1374779187918803004> All payments must be made via TRC-20 cryptocurrency only. Orders are processed exclusively through ticket requests on this server. Do not trust direct messages or unofficial contacts.
 `)
       .setFooter({
         text: 'NitroPlug • Premium Discord Services',
-        iconURL: 'https://i.imgur.com/TRZTCKT.png', // Βάλε logo αν έχεις
+        iconURL: 'https://i.imgur.com/TRZTCKT.png',
       });
 
     const menu = new StringSelectMenuBuilder()
@@ -122,27 +122,27 @@ client.on('interactionCreate', async interaction => {
 
   if (interaction.isStringSelectMenu()) {
     if (!interaction.deferred && !interaction.replied) {
-    try {
-      await interaction.deferReply({ flags: 64 }); // ✅ flags = 64 => ephemeral
-    } catch (err) {
-      console.error('❌ Failed to defer interaction reply:', err);
-      return; // Μην προχωρήσεις αν αποτύχει
+      try {
+        await interaction.deferReply({ flags: 64 });
+      } catch (err) {
+        console.error('❌ Failed to defer interaction reply:', err);
+        return;
+      }
     }
-  }
+
     const selected = interaction.values[0];
 
     if (selected === 'nitro') {
-
       const embed1 = new EmbedBuilder()
         .setColor(0xD391FA)
         .setTitle('**Discord Nitro Deals**')
         .setDescription(`
 Fast • Legit • Safe  
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
 <a:plug_nitro:1374801855389106216> Nitro Boost [Login Method]  
 > <:plug_boost:1374812787976700016> Nitro Boost 1 Month <:plug_arrow:1374782493491728394> **$6**  
-> <:plug_booster:1374812926132752414> Nitro Boost 3 Months <:plug_arrow:1374782493491728394> **$9**  
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+> <:plug_booster:1374812926132752414> Nitro Boost 3 Months <:plug_arrow:1374782493491728394> **$9**
+
 <a:plug_nitro_basic:1374814151737868349> Nitro Basic [Login Method]  
 > <:plug_basic_wumpus:1374814681465884712> Nitro Basic 1 Month <:plug_arrow:1374782493491728394> **$1.99**  
 > <:plug_nitro_wumpus:1374815093551927347> Nitro Basic 12 Months <:plug_arrow:1374782493491728394> **$22.5**
@@ -153,9 +153,8 @@ Fast • Legit • Safe
         .setTitle('**Payment & Features**')
         .setDescription(`
 Accepted Payments: <a:plug_trade:1374822992709943387> **TRC-20 Crypto Only** | **USDT**
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+
 What You Get
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
 <:plug_check:1374824992340054057> 100% Legit – Paid Through Discord  
 <:plug_rocket:1374824938426597488> Activation In Just A Few Minutes  
 <:plug_lock:1374824968160022538> We Only Log In To Activate  
@@ -167,28 +166,22 @@ What You Get
           iconURL: 'https://i.imgur.com/TRZTCKT.png',
         });
 
-      const { ButtonBuilder, ButtonStyle } = require('discord.js');
-    const button = new ActionRowBuilder().addComponents(
-      new ButtonBuilder()
-        .setLabel('Start Order')
-        .setStyle(ButtonStyle.Link)
-        .setURL('https://example.com/order') // 👈 βάλε το σωστό σου URL
-        .setEmoji('🛒')
-    );
+      const button = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel('Start Order')
+          .setStyle(ButtonStyle.Link)
+          .setURL('https://example.com/order') // 👈 άλλαξέ το σε δικό σου link
+          .setEmoji('🛒')
+      );
 
-    await interaction.editReply({
-      embeds: [embed1, embed2],
-      components: [button],
-    });
-  }
-
-
+      await interaction.editReply({
+        embeds: [embed1, embed2],
+        components: [button],
+      });
     }
 
-    // ✨ Μπορείς να προσθέσεις εδώ και το "boosts" option αν θες.
+    // ✨ Αν θέλεις μπορώ να προσθέσω και το boosts εδώ
   }
 });
-
-
 
 client.login(process.env.TOKEN);

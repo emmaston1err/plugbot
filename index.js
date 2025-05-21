@@ -56,11 +56,11 @@ client.once('ready', async () => {
   if (channel && channel.type === ChannelType.GuildText) {
     const embed = new EmbedBuilder()
       .setColor(0xD391FA)
-      .setTitle('<:plug_ticket:1374774141873295381> Ticket')
+      .setTitle('**<:plug_ticket:1374774141873295381> Ticket**')
       .setDescription(`
 Browse Our Selection
 
-<a:plug_dash:1374778714684002404> <:plug_arrow:1374782493491728394> **🛡️・We offer safe, verified, and high-quality services!**
+<a:plug_dash:1374778714684002404> <:plug_arrow:1374782493491728394> **Only authentic and guaranteed services – no compromises!**
 > **💫・Trusted by our community — always fast & reliable.**
 
 > ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

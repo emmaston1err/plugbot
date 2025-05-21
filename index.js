@@ -119,6 +119,14 @@ client.on('interactionCreate', async interaction => {
   }
 
   if (interaction.isStringSelectMenu()) {
+    if (!interaction.deferred && !interaction.replied) {
+    try {
+      await interaction.deferReply({ flags: 64 }); // ✅ flags = 64 => ephemeral
+    } catch (err) {
+      console.error('❌ Failed to defer interaction reply:', err);
+      return; // Μην προχωρήσεις αν αποτύχει
+    }
+  }
     const selected = interaction.values[0];
 
     if (selected === 'nitro') {
@@ -158,22 +166,20 @@ What You Get
           iconURL: 'https://i.imgur.com/TRZTCKT.png',
         });
 
-      const button = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setLabel('Start Order')
-          .setStyle(ButtonStyle.Link)
-          .setURL('https://example.com/order') // 🛠️ βάλε το πραγματικό σου URL εδώ
-          .setEmoji('🛒')
-      );
+      const { ButtonBuilder, ButtonStyle } = require('discord.js');
+    const button = new ActionRowBuilder().addComponents(
+      new ButtonBuilder()
+        .setLabel('Start Order')
+        .setStyle(ButtonStyle.Link)
+        .setURL('https://example.com/order') // 👈 βάλε το σωστό σου URL
+        .setEmoji('🛒')
+    );
 
-      if (!interaction.deferred && !interaction.replied) {
-  await interaction.deferReply({ flags: 64 });
-}
-
-await interaction.editReply({
-  embeds: [embed1, embed2],
-  components: [button]
-});
+    await interaction.editReply({
+      embeds: [embed1, embed2],
+      components: [button],
+    });
+  }
 
 
     }

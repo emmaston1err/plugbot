@@ -8,6 +8,8 @@ const {
   EmbedBuilder,
   ActionRowBuilder,
   StringSelectMenuBuilder,
+  ButtonBuilder,
+  ButtonStyle,
   ChannelType,
 } = require('discord.js');
 const fs = require('fs');
@@ -130,7 +132,6 @@ client.on('interactionCreate', async interaction => {
     const selected = interaction.values[0];
 
     if (selected === 'nitro') {
-      const { ButtonBuilder, ButtonStyle } = require('discord.js');
 
       const embed1 = new EmbedBuilder()
         .setColor(0xD391FA)

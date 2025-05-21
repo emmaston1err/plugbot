@@ -56,7 +56,7 @@ client.once('ready', async () => {
   if (channel && channel.type === ChannelType.GuildText) {
     const embed = new EmbedBuilder()
       .setColor(0xD391FA)
-      .setTitle(':Wa_ticket: Ticket')
+      .setTitle('<:plug_ticket:1374774141873295381> Ticket')
       .setDescription(`
 > ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 

@@ -164,11 +164,13 @@ const button = new ActionRowBuilder().addComponents(
 );
 
 
-      await interaction.reply({
-        embeds: [nitroEmbed],
-        components: [button],
-        ephemeral: true,
-      });
+      await interaction.deferReply({ ephemeral: true });
+
+await interaction.editReply({
+  embeds: [nitroEmbed],
+  components: [button],
+});
+
     }
 
     // Αν θες, πρόσθεσε εδώ και το boosts αντίστοιχα

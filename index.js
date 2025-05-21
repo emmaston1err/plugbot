@@ -60,7 +60,7 @@ client.once('ready', async () => {
       .setDescription(`
 Browse Our Selection
 
-<a:plug_dash:1374778714684002404> **🛡️・We offer safe, verified, and high-quality services!**
+<a:plug_dash:1374778714684002404> <:plug_arrow:1374782493491728394> **🛡️・We offer safe, verified, and high-quality services!**
 > **💫・Trusted by our community — always fast & reliable.**
 
 > ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

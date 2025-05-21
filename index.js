@@ -102,24 +102,24 @@ What Makes Us Different
   }
 });
 
-// Optional: interaction handler για slash commands
 client.on('interactionCreate', async interaction => {
-  if (!interaction.isChatInputCommand()) return;
-
-  const command = client.commands.get(interaction.commandName);
-  if (command) {
-    try {
-      await command.execute(client, interaction);
-    } catch (error) {
-      console.error(error);
-      await interaction.reply({
-        content: '❌ Κάτι πήγε στραβά.',
-        ephemeral: true,
-      });
+  // 👉 Slash command
+  if (interaction.isChatInputCommand()) {
+    const command = client.commands.get(interaction.commandName);
+    if (command) {
+      try {
+        await command.execute(client, interaction);
+      } catch (error) {
+        console.error(error);
+        await interaction.reply({
+          content: '❌ Κάτι πήγε στραβά.',
+          ephemeral: true,
+        });
+      }
     }
   }
-}
-         // ✅ Όταν κάποιος πατήσει επιλογή από το dropdown
+
+  // 👉 Select menu (dropdown)
   if (interaction.isStringSelectMenu()) {
     const selected = interaction.values[0];
 
@@ -155,10 +155,10 @@ client.on('interactionCreate', async interaction => {
 
       const button = new ActionRowBuilder().addComponents(
         {
-          type: 2, // BUTTON
-          style: 5, // Link button
+          type: 2,
+          style: 5,
           label: 'Start Order',
-          url: 'https://example.com/order', // βάλε το πραγματικό σου link
+          url: 'https://example.com/order', // 👉 βάλε πραγματικό σου URL
           emoji: '🛒',
         }
       );
@@ -170,8 +170,9 @@ client.on('interactionCreate', async interaction => {
       });
     }
 
-    // Εδώ μπορείς να βάλεις και το BOOSTS αν θες να κάνει κάτι αντίστοιχο
+    // Αν θες, πρόσθεσε εδώ και το boosts αντίστοιχα
   }
 });
+
 
 client.login(process.env.TOKEN);

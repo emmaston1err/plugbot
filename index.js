@@ -130,13 +130,10 @@ client.on('interactionCreate', async interaction => {
         .setDescription(`
 Fast • Legit • Safe  
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-
 <a:plug_nitro:1374801855389106216> Nitro Boost [Login Method]  
 > <:plug_boost:1374812787976700016> Nitro Boost 1 Month <:plug_arrow:1374782493491728394> **$6**  
 > <:plug_booster:1374812926132752414> Nitro Boost 3 Months <:plug_arrow:1374782493491728394> **$9**  
-
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-
 <a:plug_nitro_basic:1374814151737868349> Nitro Basic [Login Method]  
 > <:plug_basic_wumpus:1374814681465884712> Nitro Basic 1 Month <:plug_arrow:1374782493491728394> **$1.99**  
 > <:plug_nitro_wumpus:1374815093551927347> Nitro Basic 12 Months <:plug_arrow:1374782493491728394> **$22.5**

@@ -167,11 +167,20 @@ What You Get
           .setEmoji('🛒')
       );
 
-      await interaction.reply({
-  embeds: [embed1, embed2],
-  components: [button],
-  flags: 1 << 6 // αυτό κάνει το reply ephemeral
-});
+      if (interaction.deferred || interaction.replied) {
+  await interaction.followUp({
+    embeds: [embed1, embed2],
+    components: [button],
+    ephemeral: true
+  });
+} else {
+  await interaction.reply({
+    embeds: [embed1, embed2],
+    components: [button],
+    ephemeral: true
+  });
+}
+
 
     }
 

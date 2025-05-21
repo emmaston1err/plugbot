@@ -167,7 +167,7 @@ What You Get
       );
 
       if (!interaction.deferred && !interaction.replied) {
-  await interaction.deferReply({ ephemeral: true });
+  await interaction.deferReply({ flags: 64 });
 }
 
 await interaction.editReply({

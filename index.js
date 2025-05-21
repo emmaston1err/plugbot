@@ -55,7 +55,6 @@ client.once('ready', async () => {
   const channel = client.channels.cache.get('1373321172841664666');
   if (channel && channel.type === ChannelType.GuildText) {
     const embed = new EmbedBuilder()
-      .setColor(0xD391FA)
       .setTitle('**<:plug_ticket:1374774141873295381> Ticket**')
       .setDescription(`
 Browse Our Selection

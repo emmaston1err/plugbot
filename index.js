@@ -75,7 +75,7 @@ Browse Our Selection
 `)
       .setFooter({
         text: 'NitroPlug • Premium Discord Services',
-        iconURL: 'https://i.imgur.com/YOURLOGO.png', // Βάλε logo αν έχεις
+        iconURL: 'https://i.imgur.com/TRZTCKT.png', // Βάλε logo αν έχεις
       });
 
     const menu = new StringSelectMenuBuilder()

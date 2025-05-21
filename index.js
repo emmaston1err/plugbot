@@ -52,11 +52,11 @@ client.once('ready', async () => {
   }
 
   // Αυτόματο post στο κανάλι (βάλε το σωστό ID!)
-  const channel = client.channels.cache.get('1373321172841664666');
+  const channel = client.channels.cache.get('1373321120660324413');
   if (channel && channel.type === ChannelType.GuildText) {
     const embed = new EmbedBuilder()
       .setColor(0xD391FA)
-      .setTitle('**<:plug_ticket:1374774141873295381> Ticket**')
+      .setTitle('**<:plug_ticket:1374774141873295381> Buy**')
       .setDescription(`
 Browse Our Selection
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>

@@ -168,12 +168,12 @@ What You Get
           .setEmoji('🛒')
       );
 
-      await interaction.deferReply({ ephemeral: true });
+      await interaction.reply({
+  embeds: [embed1, embed2],
+  components: [button],
+  flags: 1 << 6 // αυτό κάνει το reply ephemeral
+});
 
-      await interaction.editReply({
-        embeds: [embed1, embed2],
-        components: [button],
-      });
     }
 
     // ✨ Μπορείς να προσθέσεις εδώ και το "boosts" option αν θες.

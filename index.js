@@ -153,15 +153,16 @@ client.on('interactionCreate', async interaction => {
           iconURL: 'https://i.imgur.com/TRZTCKT.png',
         });
 
-      const button = new ActionRowBuilder().addComponents(
-        {
-          type: 2,
-          style: 5,
-          label: 'Start Order',
-          url: 'https://example.com/order', // 👉 βάλε πραγματικό σου URL
-          emoji: '🛒',
-        }
-      );
+      const { ButtonBuilder, ButtonStyle } = require('discord.js'); // ✅ πρόσθεσέ το πάνω στα imports
+
+const button = new ActionRowBuilder().addComponents(
+  new ButtonBuilder()
+    .setLabel('Start Order')
+    .setStyle(ButtonStyle.Link)
+    .setURL('https://example.com/order') // βάλε το δικό σου link
+    .setEmoji('🛒')
+);
+
 
       await interaction.reply({
         embeds: [nitroEmbed],

@@ -58,7 +58,7 @@ client.once('ready', async () => {
       .setColor(0xD391FA)
       .setTitle('<:plug_ticket:1374774141873295381> Ticket')
       .setDescription(`
-> ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+Browse Our Selection
 
 > **🛡️・We offer safe, verified, and high-quality services!**
 > **💫・Trusted by our community — always fast & reliable.**

@@ -54,40 +54,34 @@ const {
     const channel = client.channels.cache.get('1373321172841664666');
     if (channel && channel.type === ChannelType.GuildText) {
       const embed = new EmbedBuilder()
-        .setTitle('🛍️ Choose Your Product')
-        .setDescription(`
-  ✨ **We provide premium Discord services at unbeatable prices!**
-  
-  🔐 **Trusted & Secure**
-  💨 **Instant Delivery**
-  💸 **Affordable & Verified**
-  
-  __**What We Offer:**__
-  > 🪄 **Nitro** — Classic & Boosted options  
-  > 🚀 **Server Boosts** — Quality guaranteed  
-  
-  🔗 Purchases only through our [official website](https://example.com)
-  `)
-        .setColor(0xE091E6)
-        .setFooter({ text: 'NitroPlug Services – Fast • Secure • Trusted' });
-  
-      const menu = new StringSelectMenuBuilder()
-        .setCustomId('product_menu')
-        .setPlaceholder('Choose a product')
-        .addOptions([
-          {
-            label: 'Nitro',
-            description: 'Nitro Classic & Boosted',
-            value: 'nitro',
-            emoji: '🪄',
-          },
-          {
-            label: 'Boosts',
-            description: 'Server Boost packages',
-            value: 'boosts',
-            emoji: '🚀',
-          },
-        ]);
+  .setColor(0xD391FA) // Απαλό μωβ/ροζ, ταιριάζει τέλεια με NitroPlug
+  .setTitle('✨・Choose Your Product')
+  .setDescription(`
+> ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+> **🛡️・We offer safe, verified, and high-quality services!**
+> **💫・Trusted by our community — always fast & reliable.**
+
+> ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+**📌・Why NitroPlug?**
+> • 🎯 100% Safe & Legit – Zero risks  
+> • ⚡ Instant Delivery – No delays  
+> • 💎 Affordable Deals – Best prices for value  
+> • 🛠️ 24/7 Support – We're here whenever you need us
+
+> ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+**💼・Available Products**
+> • 💖 **Nitro** — Classic & Boosted  
+> • 🚀 **Boosts** — Stable & Premium  
+
+> ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+**🌐・Purchases only through our [official website](https://example.com)**
+`)
+  .setFooter({ text: 'NitroPlug • Premium Discord Services', iconURL: 'https://i.imgur.com/YOURLOGO.png' }) // optional logo
+
   
       const row = new ActionRowBuilder().addComponents(menu);
       await channel.send({ embeds: [embed], components: [row] });

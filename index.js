@@ -138,15 +138,15 @@ Fast • Legit • Safe
 > <:plug_basic_wumpus:1374814681465884712> Nitro Basic 1 Month <:plug_arrow:1374782493491728394> **$1.99**  
 > <:plug_nitro_wumpus:1374815093551927347> Nitro Basic 12 Months <:plug_arrow:1374782493491728394> **$22.5**
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-Accepted Payments
-<:plug_trc:1374802353647286344> TRC-20  &  <:plug_usdt:1374802351137445909> USDT
-
-## ⭐ Features
-> ✅ Legally Paid  
-> ⚡ Fast activation within minutes  
-> 🔐 We only log in to activate — full privacy respected  
-> 🛡️ We recommend enabling **2FA**  
-> 💬 Full guarantee for any issue
+Accepted Payments: <a:plug_trade:1374822992709943387> TRC-20 Crypto Only | USDT
+<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+What You Get
+<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+<:plug_check:1374824992340054057> 100% Legit – Paid Directly Through Discord
+<:plug_rocket:1374824938426597488> Activation In Just A Few Minutes
+<:plug_lock:1374824968160022538> We Log In Only To Activate — Your Account Stays Secure
+<:plug_shield_check:1374824939999465502> 2FA Recommended For Extra Safety
+<:plug_refresh:1374824936669057034> Full Refund Or Replacement If Anything Goes Wrong
         `)
         .setFooter({
           text: 'NitroPlug • Trusted Discord Services',

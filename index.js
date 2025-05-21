@@ -103,7 +103,6 @@ What Makes Us Different
 });
 
 client.on('interactionCreate', async interaction => {
-  // 👉 Slash command
   if (interaction.isChatInputCommand()) {
     const command = client.commands.get(interaction.commandName);
     if (command) {
@@ -119,63 +118,71 @@ client.on('interactionCreate', async interaction => {
     }
   }
 
-  // 👉 Select menu (dropdown)
   if (interaction.isStringSelectMenu()) {
     const selected = interaction.values[0];
 
     if (selected === 'nitro') {
-      const nitroEmbed = new EmbedBuilder()
+      const { ButtonBuilder, ButtonStyle } = require('discord.js');
+
+      const embed1 = new EmbedBuilder()
         .setColor(0xD391FA)
         .setTitle('**Discord Nitro Deals**')
         .setDescription(`
-Fast • Legit • Safe
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-<a:plug_nitro:1374801855389106216> Nitro Boost [Login Method]
-> <:plug_boost:1374812787976700016> Nitro Boost 1 Month <:plug_arrow:1374782493491728394> **$6**
-> <:plug_booster:1374812926132752414> Nitro Boost 3 Months <:plug_arrow:1374782493491728394> **$9**
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-<a:plug_nitro_basic:1374814151737868349> Nitro Basic [Login Method]
+Fast • Legit • Safe  
+<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+
+<a:plug_nitro:1374801855389106216> Nitro Boost [Login Method]  
+> <:plug_boost:1374812787976700016> Nitro Boost 1 Month <:plug_arrow:1374782493491728394> **$6**  
+> <:plug_booster:1374812926132752414> Nitro Boost 3 Months <:plug_arrow:1374782493491728394> **$9**  
+
+<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+
+<a:plug_nitro_basic:1374814151737868349> Nitro Basic [Login Method]  
 > <:plug_basic_wumpus:1374814681465884712> Nitro Basic 1 Month <:plug_arrow:1374782493491728394> **$1.99**  
 > <:plug_nitro_wumpus:1374815093551927347> Nitro Basic 12 Months <:plug_arrow:1374782493491728394> **$22.5**
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-Accepted Payments: <a:plug_trade:1374822992709943387> TRC-20 Crypto Only | USDT
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-What You Get
-<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-<:plug_check:1374824992340054057> 100% Legit – Paid Directly Through Discord
-<:plug_rocket:1374824938426597488> Activation In Just A Few Minutes
-<:plug_lock:1374824968160022538> We Log In Only To Activate — Your Account Stays Secure
-<:plug_shield_check:1374824939999465502> 2FA Recommended For Extra Safety
-<:plug_refresh:1374824936669057034> Full Refund Or Replacement If Anything Goes Wrong
+        `);
+
+      const embed2 = new EmbedBuilder()
+        .setColor(0xD391FA)
+        .setTitle('**Payment & What You Get**')
+        .setDescription(`
+Accepted Payments:  
+<a:plug_trade:1374822992709943387> **TRC-20 Crypto Only** | **USDT**  
+
+<a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+
+What You Get  
+<:plug_check:1374824992340054057> 100% Legit – Paid Through Discord  
+<:plug_rocket:1374824938426597488> Activation In Just A Few Minutes  
+<:plug_lock:1374824968160022538> We Only Log In To Activate  
+<:plug_shield_check:1374824939999465502> 2FA Recommended For Extra Security  
+<:plug_refresh:1374824936669057034> Full Refund Or Replacement Guarantee
         `)
         .setFooter({
-          text: 'NitroPlug • Trusted Discord Services',
+          text: 'NitroPlug • Premium Discord Services',
           iconURL: 'https://i.imgur.com/TRZTCKT.png',
         });
 
-      const { ButtonBuilder, ButtonStyle } = require('discord.js');
-
-const button = new ActionRowBuilder().addComponents(
-  new ButtonBuilder()
-    .setLabel('Start Order')
-    .setStyle(ButtonStyle.Link)
-    .setURL('https://example.com/order')
-    .setEmoji('🛒')
-);
-
+      const button = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setLabel('Start Order')
+          .setStyle(ButtonStyle.Link)
+          .setURL('https://example.com/order') // 🛠️ βάλε το πραγματικό σου URL εδώ
+          .setEmoji('🛒')
+      );
 
       await interaction.deferReply({ ephemeral: true });
 
-await interaction.editReply({
-  embeds: [nitroEmbed],
-  components: [button],
-});
-
+      await interaction.editReply({
+        embeds: [embed1, embed2],
+        components: [button],
+      });
     }
 
-    // Αν θες, πρόσθεσε εδώ και το boosts αντίστοιχα
+    // ✨ Μπορείς να προσθέσεις εδώ και το "boosts" option αν θες.
   }
 });
+
 
 
 client.login(process.env.TOKEN);

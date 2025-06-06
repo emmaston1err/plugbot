@@ -15,7 +15,6 @@ client.once('ready', async () => {
 
   const embed = new EmbedBuilder()
     .setColor(0x8e44ad)
-    .setAuthor({ name: 'PlugBot', iconURL: client.user.displayAvatarURL() })
     .setTitle('Welcome to NitroPlug!')
     .setDescription(`💜 Your hub for safe, affordable, and instant Discord Nitro & Boosts.
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
@@ -38,7 +37,7 @@ client.once('ready', async () => {
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
 <a:plug_dash:1374778714684002404> Your security is our priority.  
 <a:plug_dash:1374778714684002404> Your satisfaction is guaranteed — or your money back.`)
-    .setFooter({ text: 'NitroPlug • Premium Discord Services' });
+    .setFooter({ iconURL: client.user.displayAvatarURL(), text: 'NitroPlug • Premium Discord Services' });
 
   await channel.send({ embeds: [embed] });
   console.log('✅ Welcome message sent.');

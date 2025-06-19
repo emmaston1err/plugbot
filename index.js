@@ -125,7 +125,7 @@ client.on('interactionCreate', async (interaction) => {
         <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
         <a:plug_trade:1374822992709943387> Accepted Payments: **USDT (TRC-20)** - only.
         <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-        <:plug_features:1385229242781925517> Why Choose NitroPlug
+        <:plug_features:1385229242781925517> Why Choose NitroPlug?
         > <:plug_check:1374824992340054057> 100% Legitimate & Paid.
         > <:plug_rocket:1374824938426597488> Delivery within minutes after order confirmation.
         > <:plug_lock:1374824968160022538> One-time login for payment only. We never keep or save any credentials.

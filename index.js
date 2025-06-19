@@ -170,17 +170,27 @@ client.on('interactionCreate', async (interaction) => {
         .setCustomId('select_nitro_plan')
         .setPlaceholder('Click')
         .addOptions([
-          {
-            label: 'Nitro Boost',
-            description: 'Via Login',
-            emoji: '<a:plug_nitro:1374801855389106216>',
-          },
-          {
-            label: 'Nitro Basic',
-            description: 'Via Login',
-            emoji: '<a:plug_nitro_basic:1374814151737868349>',
-          },
-        ])
+  {
+    label: 'Nitro Boost',
+    description: 'Via Login',
+    value: 'plan_nitro_boost',
+    emoji: {
+      name: 'plug_nitro',
+      id: '1374801855389106216',
+      animated: true
+    },
+  },
+  {
+    label: 'Nitro Basic',
+    description: 'Via Login',
+    value: 'plan_nitro_basic',
+    emoji: {
+      name: 'plug_nitro_basic',
+      id: '1374814151737868349',
+      animated: true
+    },
+  },
+])
     );
 
     await interaction.followUp({

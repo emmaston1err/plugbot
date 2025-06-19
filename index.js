@@ -404,7 +404,16 @@ server_boost_3m: {
       .setStyle(ButtonStyle.Secondary)
   );
 
-  await interaction.reply({ embeds: [summaryEmbed], components: [confirmButton], ephemeral: true });
+  try {
+  if (interaction.replied || interaction.deferred) {
+    await interaction.followUp({ embeds: [summaryEmbed], components: [confirmButton], ephemeral: true });
+  } else {
+    await interaction.reply({ embeds: [summaryEmbed], components: [confirmButton], ephemeral: true });
+  }
+} catch (err) {
+  console.error('⚠️ Failed to respond to interaction:', err);
+}
+
 });
 
 client.on('interactionCreate', async (interaction) => {

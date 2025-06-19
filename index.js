@@ -393,8 +393,8 @@ const ticketEmbed = new EmbedBuilder()
  > ❌ Do not ping staff repeatedly.
  > Be respectful.
  > 🛑 Payments via TRC-20 only.
-
-If you wish to cancel or close this ticket, you can use the button below.
+ <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+ If you wish to cancel or close this ticket, you can use the button below.
   `)
   .setFooter({ text: 'NitroPlug Support', iconURL: client.user.displayAvatarURL() });
 

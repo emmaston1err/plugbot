@@ -62,7 +62,7 @@ client.once('ready', async () => {
      <:plug_arrow:1374782493491728394> • Budget-Friendly – Premium Service At Low Prices
      <:plug_arrow:1374782493491728394> • Round-The-Clock Help – Support When You Need It, Always
     
-    ⚠️ Important Notice
+    ⚠️ **Important Notice**
     <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
     <a:plug_impression:1374779187918803004> All payments must be made via TRC-20 cryptocurrency only. Orders are processed exclusively through ticket requests on this server. Do not trust direct messages or unofficial contacts. <a:plug_impression:1374779187918803004>
   `)

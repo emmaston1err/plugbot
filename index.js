@@ -114,7 +114,7 @@ client.on('interactionCreate', async (interaction) => {
       const nitroEmbed = new EmbedBuilder()
         .setColor(0x8e44ad)
         .setTitle('Discord Nitro')
-        .setDescription(`Safe, Fast & Verified
+        .setDescription(`Safe, Fast & Verified.
         <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
         <a:plug_nitro:1374801855389106216> Nitro Boosts
         > <:plug_boost:1374812787976700016> Nitro Boost - 1 Month <:plug_arrow:1374782493491728394> **$3**

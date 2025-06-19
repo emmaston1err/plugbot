@@ -245,12 +245,12 @@ client.on('interactionCreate', async (interaction) => {
       .addOptions([
         {
           label: '1M – $10',
-          value: 'boost_1m',
+          value: 'server_boost_1m',
           emoji: { name: 'plug_boost', id: '1374812787976700016' },
         },
         {
           label: '3M – $20',
-          value: 'boost_12m',
+          value: 'server_boost_3m',
           emoji: { name: 'plug_booster', id: '1374812926132752414' },
         },
       ])
@@ -363,7 +363,19 @@ client.on('interactionCreate', async (interaction) => {
     product: 'Nitro Basic',
     plan: '12 Months',
     price: '$20'
-  }
+  },
+    server_boost_1m: {
+  emoji: '<a:plug_boosts:1374801892152053912>',
+  product: 'Server Boosts',
+  plan: '1 Month / 14 Boosts',
+  price: '$10'
+},
+server_boost_3m: {
+  emoji: '<a:plug_boosts:1374801892152053912>',
+  product: 'Server Boosts',
+  plan: '3 Months / 14 Boosts',
+  price: '$20'
+}
 };
 
 
@@ -407,7 +419,9 @@ const ticketNames = {
   boost_1m: 'nitro-boost-1m',
   boost_12m: 'nitro-boost-12m',
   basic_1m: 'nitro-basic-1m',
-  basic_12m: 'nitro-basic-12m'
+  basic_12m: 'nitro-basic-12m',
+  server_boost_1m: 'server-boost-1m',
+  server_boost_3m: 'server-boost-3m'
 };
 
 const ticketLabel = ticketNames[selectedPlan] || 'custom';
@@ -484,4 +498,53 @@ client.on('interactionCreate', async (interaction) => {
     }
   }, 2000);
 });
+
+client.on('interactionCreate', async (interaction) => {
+  if (!interaction.isStringSelectMenu()) return;
+  if (interaction.customId !== 'select_boost_plan') return;
+
+  const selected = interaction.values[0];
+
+  const summaries = {
+    server_boost_1m: {
+      emoji: '<a:plug_boosts:1374801892152053912>',
+      product: 'Server Boosts',
+      plan: '1 Month / 14 Boosts',
+      price: '$10'
+    },
+    server_boost_3m: {
+      emoji: '<a:plug_boosts:1374801892152053912>',
+      product: 'Server Boosts',
+      plan: '3 Months / 14 Boosts',
+      price: '$20'
+    }
+  };
+
+  const summary = summaries[selected];
+  if (!summary) return;
+
+  userSelections.set(interaction.user.id, selected);
+
+  const summaryEmbed = new EmbedBuilder()
+    .setTitle('<a:plug_loading:1385244121878237317> Order Details:')
+    .setColor(0xe5a0fa)
+    .setDescription(`
+    ⤹ ${summary.emoji} Product: **${summary.product}**
+    ⤹ ${summary.emoji} Plan: **${summary.plan}**
+    ⤹ ${summary.emoji} Price: **${summary.price}**
+    ⤹ ${summary.emoji} Payment: **USDT (TRC-20)**
+    
+    ⚠️ Order will be completed via ticket. <a:plug_impression:1374779187918803004>
+    `);
+
+  const confirmButton = new ActionRowBuilder().addComponents(
+    new ButtonBuilder()
+      .setCustomId('confirm_order')
+      .setLabel('Confirm Order')
+      .setStyle(ButtonStyle.Secondary)
+  );
+
+  await interaction.reply({ embeds: [summaryEmbed], components: [confirmButton], ephemeral: true });
+});
+
 

@@ -116,7 +116,7 @@ client.on('interactionCreate', async (interaction) => {
         .setTitle('Discord Nitro')
         .setDescription(`Safe, Fast & Verified.
         <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-        <a:plug_nitro:1374801855389106216> Nitro Boosts
+        <a:plug_nitro:1374801855389106216> Nitro Boost
         > <:plug_boost:1374812787976700016> Nitro Boost - 1 Month <:plug_arrow:1374782493491728394> **$3**
         > <:plug_booster:1374812926132752414> Nitro Boost - 12 Months <:plug_arrow:1374782493491728394> **$9**
         <a:plug_nitro_basic:1374814151737868349> Nitro Basic
@@ -155,42 +155,30 @@ client.on('interactionCreate', async (interaction) => {
   if (!interaction.isButton()) return;
 
   if (interaction.customId === 'start_order') {
-    // 1. Πρώτο μήνυμα
     await interaction.reply({
-      content: '🛒 Starting your order...',
+      content: '<a:plug_buy:1374809315525001301> Starting your order...',
       ephemeral: true,
     });
-
-    // 2. Embed με dropdown επιλογές
+    
     const orderEmbed = new EmbedBuilder()
-      .setTitle('📦 Nitro')
-      .setDescription('Please select the plan:')
+      .setTitle('<a:plug_waiting:1375428227392208948> Nitro')
+      .setDescription('Please choose a plan:')
       .setColor(0xe5a0fa);
 
     const planMenu = new ActionRowBuilder().addComponents(
       new StringSelectMenuBuilder()
         .setCustomId('select_nitro_plan')
-        .setPlaceholder('Click to choose')
+        .setPlaceholder('Click')
         .addOptions([
           {
-            label: '1 Month Boost',
-            description: '$3',
-            value: 'boost_1m',
+            label: 'Nitro Boost',
+            description: 'Via Login',
+            emoji: '<a:plug_nitro:1374801855389106216>',
           },
           {
-            label: '12 Months Boost',
-            description: '$9',
-            value: 'boost_12m',
-          },
-          {
-            label: '1 Month Basic',
-            description: '$2',
-            value: 'basic_1m',
-          },
-          {
-            label: '12 Months Basic',
-            description: '$20',
-            value: 'basic_12m',
+            label: 'Nitro Basic',
+            description: 'Via Login',
+            emoji: '<a:plug_nitro_basic:1374814151737868349>',
           },
         ])
     );

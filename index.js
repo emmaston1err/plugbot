@@ -75,19 +75,16 @@ client.once('ready', async () => {
       .setPlaceholder('Select Product')
       .addOptions([
         {
-          label: 'Classic Nitro',
-          description: 'Basic Nitro plan for users',
-          value: 'classic_nitro',
+          label: 'Nitro',
+          description: 'Classic & Boosted Nitro Options',
+          value: 'nitro',
+          emoji: '<a:plug_nitro:1374801855389106216>',
         },
         {
-          label: 'Nitro Boosted',
-          description: 'Full boosted Nitro with perks',
-          value: 'nitro_boosted',
-        },
-        {
-          label: 'Server Boost Package',
-          description: 'Monthly or yearly boost plans',
-          value: 'boost_package',
+          label: 'Boosts',
+          description: 'Stable & Premium Boost Packages',
+          value: 'boosts',
+          emoji: '<a:plug_boosts:1374801892152053912>',
         },
       ])
   );

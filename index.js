@@ -200,3 +200,17 @@ client.on('interactionCreate', async (interaction) => {
     });
   }
 });
+
+client.on('interactionCreate', async (interaction) => {
+  if (!interaction.isStringSelectMenu()) return;
+
+  if (interaction.customId === 'select_nitro_plan') {
+    const selected = interaction.values[0];
+
+    if (selected === 'plan_nitro_boost') {
+      // Εμφάνιση Nitro Boost επιλογών
+    } else if (selected === 'plan_nitro_basic') {
+      // Εμφάνιση Nitro Basic επιλογών
+    }
+  }
+});

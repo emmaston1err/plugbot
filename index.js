@@ -410,6 +410,7 @@ server_boost_3m: {
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isButton()) return;
   if (interaction.customId !== 'confirm_order') return;
+  await interaction.deferReply({ ephemeral: true });
 
   // Πάρε την επιλογή του χρήστη
 const selectedPlan = userSelections.get(interaction.user.id) || 'custom';
@@ -448,10 +449,9 @@ const ticketLabel = ticketNames[selectedPlan] || 'custom';
     ],
   });
 
-  await interaction.reply({
-    content: `<:plug_ticket:1374774141873295381> Ticket created: <#${ticketChannel.id}>`,
-    ephemeral: true
-  });
+  await interaction.editReply({
+  content: `<:plug_ticket:1374774141873295381> Ticket created: <#${ticketChannel.id}>`
+});
 
   const closeButtonRow = new ActionRowBuilder().addComponents(
   new ButtonBuilder()

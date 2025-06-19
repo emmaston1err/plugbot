@@ -386,7 +386,7 @@ const ticketLabel = ticketNames[selectedPlan] || 'custom';
 
 const ticketEmbed = new EmbedBuilder()
   .setColor(0xe5a0fa)
-  .setTitle('<:plug_ticket:1374774141873295381> Hello ${member}, thank you for your order!')
+  .setTitle(`<:plug_ticket:1374774141873295381> Hello ${member}, thank you for your order!`)
   .setDescription(`
  <:plug_arrow:1374782493491728394> Please wait for an agent to respond.
  <:plug_arrow:1374782493491728394> All transactions are handled **securely and privately** here.

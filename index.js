@@ -5,7 +5,7 @@ app.get('/', (req, res) => res.send('bot is alive!'));
 app.listen(PORT, () => console.log(`🌐 web server listening on port ${PORT}`));
 
 require('dotenv').config();
-const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder } = require('discord.js');
+const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
@@ -134,7 +134,19 @@ client.on('interactionCreate', async (interaction) => {
         `)
         .setColor(0xe5a0fa);
 
-      await interaction.reply({ embeds: [nitroEmbed], ephemeral: true });
+      const startOrderButton = new ActionRowBuilder().addComponents(
+  new ButtonBuilder()
+    .setCustomId('start_order')
+    .setLabel('Start Order')
+    .setStyle(ButtonStyle.Secondary)
+);
+
+      await interaction.reply({
+  embeds: [nitroEmbed],
+  components: [startOrderButton],
+  ephemeral: true
+});
+
     }
   }
 });

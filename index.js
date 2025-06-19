@@ -156,8 +156,8 @@ client.on('interactionCreate', async (interaction) => {
     .setColor(0xe5a0fa)
     .setTitle('Server Boost')
     .setDescription(`Stable, Premium Boost Packages Delivered Instantly.
-    > <a:plug_boosts:1374801892152053912> 14 Server Boosts - 1 Month <:plug_arrow:1374782493491728394> **$3**
-    > <a:plug_boosts:1374801892152053912> 14 Server Boosts - 3 Months <:plug_arrow:1374782493491728394> **$9**
+    > <a:plug_boosts:1374801892152053912> 14 Server Boosts - 1 Month <:plug_arrow:1374782493491728394> **$10**
+    > <a:plug_boosts:1374801892152053912> 14 Server Boosts - 3 Months <:plug_arrow:1374782493491728394> **$20**
     <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
     Payment: **USDT (TRC-20)** - only.`);
 

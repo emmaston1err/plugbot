@@ -128,7 +128,7 @@ client.on('interactionCreate', async (interaction) => {
         <:plug_features:1385229242781925517> Why Choose NitroPlug
         > <:plug_check:1374824992340054057> 100% Legitimate & Paid.
         > <:plug_rocket:1374824938426597488> Delivery within minutes after order confirmation.
-        > <:plug_lock:1374824968160022538> We never keep credentials — login used once for purchase, then securely logged out.
+        > <:plug_lock:1374824968160022538> We never keep credentials. Login used once for purchase, then securely logged out.
         > <:plug_shield_check:1374824939999465502> Strongly recommend enabling 2FA for your safety.
         > <:plug_refresh:1374824936669057034> Full coverage & instant replacement if issues arise.
         `)

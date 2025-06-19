@@ -150,6 +150,30 @@ client.on('interactionCreate', async (interaction) => {
 });
 
     }
+
+    if (selected === 'boosts') {
+  const boostEmbed = new EmbedBuilder()
+    .setColor(0xe5a0fa)
+    .setTitle('Boosts')
+    .setDescription(`⚡ Stable, Premium Boost Packages Delivered Instantly.
+<:plug_boost:1374812787976700016> 1 Month – **$3**  
+<:plug_booster:1374812926132752414> 12 Months – **$9**  
+💸 Payment: **USDT (TRC-20)** only.`);
+
+  const startOrderButton = new ActionRowBuilder().addComponents(
+    new ButtonBuilder()
+      .setCustomId('start_order_boost')
+      .setLabel('Start Order')
+      .setStyle(ButtonStyle.Secondary)
+  );
+
+  await interaction.reply({
+    embeds: [boostEmbed],
+    components: [startOrderButton],
+    ephemeral: true
+  });
+}
+
   }
 });
 
@@ -201,6 +225,48 @@ client.on('interactionCreate', async (interaction) => {
       ephemeral: true,
     });
   }
+
+  if (interaction.customId === 'start_order_boost') {
+  await interaction.reply({
+    content: '<a:plug_buy:1374809315525001301> Preparing your Boost order...',
+    ephemeral: true,
+  });
+
+  const boostEmbed = new EmbedBuilder()
+    .setTitle('<a:plug_boosts:1374801892152053912> Boost Plans')
+    .setDescription(`Please select the Boost plan you want to purchase:
+> <:plug_boost:1374812787976700016> 1 Month Boost – **$3**  
+> <:plug_booster:1374812926132752414> 12 Months Boost – **$9**
+
+💸 Payment Method: **USDT (TRC-20)**
+`)
+    .setColor(0xe5a0fa);
+
+  const boostPlanMenu = new ActionRowBuilder().addComponents(
+    new StringSelectMenuBuilder()
+      .setCustomId('select_boost_plan')
+      .setPlaceholder('Select Boost Plan')
+      .addOptions([
+        {
+          label: '1 Month – $3',
+          value: 'boost_1m',
+          emoji: { name: 'plug_boost', id: '1374812787976700016' },
+        },
+        {
+          label: '12 Months – $9',
+          value: 'boost_12m',
+          emoji: { name: 'plug_booster', id: '1374812926132752414' },
+        },
+      ])
+  );
+
+  await interaction.followUp({
+    embeds: [boostEmbed],
+    components: [boostPlanMenu],
+    ephemeral: true,
+  });
+}
+
 });
 
 client.on('interactionCreate', async (interaction) => {

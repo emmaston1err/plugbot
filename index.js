@@ -21,7 +21,7 @@ client.once('ready', async () => {
   if (!channel) return console.error('❌ Channel not found.');
 
   const embed = new EmbedBuilder()
-    .setColor(0xe180ff)
+    .setColor(0xe5a0fa)
     .setTitle('Welcome to NitroPlug!')
     .setDescription(`💜 Your hub for safe, affordable, and instant Discord Nitro & Boosts.
 <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
@@ -48,7 +48,7 @@ client.once('ready', async () => {
   
   // buy embed for the buy-nitro channel
   const buyEmbed = new EmbedBuilder()
-    .setColor(0xe180ff)
+    .setColor(0xe5a0fa)
     .setTitle('<a:plug_buy:1374809315525001301> Buy')
     .setDescription(`Browse Our Selection
     <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
@@ -112,7 +112,7 @@ client.on('interactionCreate', async (interaction) => {
 
     if (selected === 'nitro') {
       const nitroEmbed = new EmbedBuilder()
-        .setColor(0xe180ff)
+        .setColor(0xe5a0fa)
         .setTitle('Discord Nitro')
         .setDescription(`Safe, Fast & Verified.
         <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
@@ -132,7 +132,7 @@ client.on('interactionCreate', async (interaction) => {
         > <:plug_shield_check:1374824939999465502> Strongly recommend enabling 2FA for your safety.
         > <:plug_refresh:1374824936669057034> Full coverage & instant replacement if issues arise.
         `)
-        .setColor(0xe180ff);
+        .setColor(0xe5a0fa);
 
       await interaction.reply({ embeds: [nitroEmbed], ephemeral: true });
     }

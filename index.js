@@ -201,16 +201,74 @@ client.on('interactionCreate', async (interaction) => {
   }
 });
 
+// 📦 Handle selection of Nitro Boost or Nitro Basic plan
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isStringSelectMenu()) return;
+  if (interaction.customId !== 'select_nitro_plan') return;
 
-  if (interaction.customId === 'select_nitro_plan') {
-    const selected = interaction.values[0];
+  const selected = interaction.values[0];
 
-    if (selected === 'plan_nitro_boost') {
-      // Εμφάνιση Nitro Boost επιλογών
-    } else if (selected === 'plan_nitro_basic') {
-      // Εμφάνιση Nitro Basic επιλογών
-    }
+  if (selected === 'plan_nitro_boost') {
+    const boostEmbed = new EmbedBuilder()
+      .setTitle('<a:plug_nitro:1374801855389106216> Nitro Boost Options')
+      .setDescription(`
+Please select the plan:
+
+> <:plug_boost:1374812787976700016> 1 Month — **$3**
+> <:plug_booster:1374812926132752414> 12 Months — **$9**
+`)
+      .setColor(0xe5a0fa);
+
+    const boostMenu = new ActionRowBuilder().addComponents(
+      new StringSelectMenuBuilder()
+        .setCustomId('select_nitro_boost_plan')
+        .setPlaceholder('Choose Boost Duration')
+        .addOptions([
+          {
+            label: '1 Month - $3',
+            value: 'boost_1m',
+            emoji: { name: 'plug_boost', id: '1374812787976700016' }
+          },
+          {
+            label: '12 Months - $9',
+            value: 'boost_12m',
+            emoji: { name: 'plug_booster', id: '1374812926132752414' }
+          },
+        ])
+    );
+
+    await interaction.reply({ embeds: [boostEmbed], components: [boostMenu], ephemeral: true });
+  }
+
+  if (selected === 'plan_nitro_basic') {
+    const basicEmbed = new EmbedBuilder()
+      .setTitle('<a:plug_nitro_basic:1374814151737868349> Nitro Basic Options')
+      .setDescription(`
+Please select the plan:
+
+> <:plug_basic_wumpus:1374814681465884712> 1 Month — **$2**
+> <:plug_nitro_wumpus:1374815093551927347> 12 Months — **$20**
+`)
+      .setColor(0xe5a0fa);
+
+    const basicMenu = new ActionRowBuilder().addComponents(
+      new StringSelectMenuBuilder()
+        .setCustomId('select_nitro_basic_plan')
+        .setPlaceholder('Choose Basic Duration')
+        .addOptions([
+          {
+            label: '1 Month - $2',
+            value: 'basic_1m',
+            emoji: { name: 'plug_basic_wumpus', id: '1374814681465884712' }
+          },
+          {
+            label: '12 Months - $20',
+            value: 'basic_12m',
+            emoji: { name: 'plug_nitro_wumpus', id: '1374815093551927347' }
+          },
+        ])
+    );
+
+    await interaction.reply({ embeds: [basicEmbed], components: [basicMenu], ephemeral: true });
   }
 });

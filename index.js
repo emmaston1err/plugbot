@@ -274,11 +274,32 @@ client.on('interactionCreate', async (interaction) => {
   if (!interaction.isStringSelectMenu()) return;
 
   const summaries = {
-    boost_1m: { product: 'Nitro Boost', plan: '1 Month', price: '$3' },
-    boost_12m: { product: 'Nitro Boost', plan: '12 Months', price: '$9' },
-    basic_1m: { product: 'Nitro Basic', plan: '1 Month', price: '$2' },
-    basic_12m: { product: 'Nitro Basic', plan: '12 Months', price: '$20' }
-  };
+  boost_1m: {
+    emoji: '<:plug_boost:1374812787976700016>',
+    product: 'Nitro Boost',
+    plan: '1 Month',
+    price: '$3'
+  },
+  boost_12m: {
+    emoji: '<:plug_booster:1374812926132752414>',
+    product: 'Nitro Boost',
+    plan: '12 Months',
+    price: '$9'
+  },
+  basic_1m: {
+    emoji: '<:plug_basic_wumpus:1374814681465884712>',
+    product: 'Nitro Basic',
+    plan: '1 Month',
+    price: '$2'
+  },
+  basic_12m: {
+    emoji: '<:plug_nitro_wumpus:1374815093551927347>',
+    product: 'Nitro Basic',
+    plan: '12 Months',
+    price: '$20'
+  }
+};
+
 
   const selected = interaction.values[0];
   const summary = summaries[selected];
@@ -288,10 +309,10 @@ client.on('interactionCreate', async (interaction) => {
     .setTitle('<a:plug_loading:1385244121878237317> Order Details:')
     .setColor(0xe5a0fa)
     .setDescription(`
-    ⤹🔹 Product: **${summary.product}**
-    ⤹🔹 Plan: **${summary.plan}**
-    ⤹🔹 Price: **${summary.price}**
-    ⤹🔹 Payment: **USDT (TRC-20)**
+    ⤹${summary.emoji} Product: **${summary.product}**
+    ⤹${summary.emoji} Plan: **${summary.plan}**
+    ⤹${summary.emoji} Price: **${summary.price}**
+    ⤹${summary.emoji} Payment: **USDT (TRC-20)**
     
     ⚠️ Order will be completed via ticket. <a:plug_impression:1374779187918803004>
     `);

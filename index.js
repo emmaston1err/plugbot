@@ -119,7 +119,7 @@ client.on('interactionCreate', async (interaction) => {
         <a:plug_nitro:1374801855389106216> Nitro
         > <:plug_boost:1374812787976700016> Nitro Boost - 1 Month <:plug_arrow:1374782493491728394> **$3**
         > <:plug_booster:1374812926132752414> Nitro Boost - 12 Months <:plug_arrow:1374782493491728394> **$9**
-        <a:plug_nitro_basic:1374814151737868349> Nitro Basic
+        <a:plug_nitro_basic:1374814151737868349> Nitro
         > <:plug_basic_wumpus:1374814681465884712> Nitro Basic - 1 Month <:plug_arrow:1374782493491728394> **$2**
         > <:plug_nitro_wumpus:1374815093551927347> Nitro Basic - 12 Months <:plug_arrow:1374782493491728394> **$20**
         <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
@@ -309,10 +309,10 @@ client.on('interactionCreate', async (interaction) => {
     .setTitle('<a:plug_loading:1385244121878237317> Order Details:')
     .setColor(0xe5a0fa)
     .setDescription(`
-    ⤹${summary.emoji} Product: **${summary.product}**
-    ⤹${summary.emoji} Plan: **${summary.plan}**
-    ⤹${summary.emoji} Price: **${summary.price}**
-    ⤹${summary.emoji} Payment: **USDT (TRC-20)**
+    ⤹ ${summary.emoji} Product: **${summary.product}**
+    ⤹ ${summary.emoji} Plan: **${summary.plan}**
+    ⤹ ${summary.emoji} Price: **${summary.price}**
+    ⤹ ${summary.emoji} Payment: **USDT (TRC-20)**
     
     ⚠️ Order will be completed via ticket. <a:plug_impression:1374779187918803004>
     `);
@@ -331,13 +331,12 @@ client.on('interactionCreate', async (interaction) => {
   if (!interaction.isButton()) return;
   if (interaction.customId !== 'confirm_order') return;
 
-  // Δημιουργία ticket καναλιού
   const guild = interaction.guild;
   const member = interaction.member;
 
   const ticketChannel = await guild.channels.create({
     name: `ticket-${member.user.username}`,
-    type: 0, // Text channel
+    type: 0,
     permissionOverwrites: [
       {
         id: guild.roles.everyone,
@@ -355,7 +354,7 @@ client.on('interactionCreate', async (interaction) => {
   });
 
   await interaction.reply({
-    content: `🎫 Ticket created: <#${ticketChannel.id}>`,
+    content: `<:plug_ticket:1374774141873295381> Ticket created: <#${ticketChannel.id}>`,
     ephemeral: true
   });
 

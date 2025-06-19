@@ -264,6 +264,79 @@ client.on('interactionCreate', async (interaction) => {
         ])
     );
 
+    
+
     await interaction.reply({ embeds: [basicEmbed], components: [basicMenu], ephemeral: true });
   }
+});
+
+client.on('interactionCreate', async (interaction) => {
+  if (!interaction.isStringSelectMenu()) return;
+
+  const summaries = {
+    boost_1m: { product: 'Nitro Boost', plan: '1 Month', price: '$3' },
+    boost_12m: { product: 'Nitro Boost', plan: '12 Months', price: '$9' },
+    basic_1m: { product: 'Nitro Basic', plan: '1 Month', price: '$2' },
+    basic_12m: { product: 'Nitro Basic', plan: '12 Months', price: '$20' }
+  };
+
+  const selected = interaction.values[0];
+  const summary = summaries[selected];
+  if (!summary) return;
+
+  const summaryEmbed = new EmbedBuilder()
+    .setTitle('📦 Order Summary:')
+    .setColor(0x2ecc71)
+    .setDescription(`
+🔹 **Product:** ${summary.product}
+🔹 **Plan:** ${summary.plan}
+🔹 **Price:** ${summary.price}
+🔹 **Payment:** USDT (TRC-20)
+
+💡 Order will be completed via ticket.
+    `);
+
+  const confirmButton = new ActionRowBuilder().addComponents(
+    new ButtonBuilder()
+      .setCustomId('confirm_order')
+      .setLabel('Confirm Order')
+      .setStyle(ButtonStyle.Success)
+  );
+
+  await interaction.reply({ embeds: [summaryEmbed], components: [confirmButton], ephemeral: true });
+});
+
+client.on('interactionCreate', async (interaction) => {
+  if (!interaction.isButton()) return;
+  if (interaction.customId !== 'confirm_order') return;
+
+  // Δημιουργία ticket καναλιού
+  const guild = interaction.guild;
+  const member = interaction.member;
+
+  const ticketChannel = await guild.channels.create({
+    name: `ticket-${member.user.username}`,
+    type: 0, // Text channel
+    permissionOverwrites: [
+      {
+        id: guild.roles.everyone,
+        deny: ['ViewChannel'],
+      },
+      {
+        id: member.user.id,
+        allow: ['ViewChannel', 'SendMessages'],
+      },
+      {
+        id: client.user.id,
+        allow: ['ViewChannel', 'SendMessages'],
+      }
+    ],
+  });
+
+  await interaction.reply({
+    content: `🎫 Ticket created: <#${ticketChannel.id}>`,
+    ephemeral: true
+  });
+
+  await ticketChannel.send(`👋 Hello ${member}, an agent will be with you shortly to complete your order.`);
 });

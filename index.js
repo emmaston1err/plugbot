@@ -103,3 +103,40 @@ client.once('ready', async () => {
 });
 
 client.login(process.env.TOKEN);
+
+client.on('interactionCreate', async (interaction) => {
+  if (!interaction.isStringSelectMenu()) return;
+
+  if (interaction.customId === 'select_product') {
+    const selected = interaction.values[0];
+
+    if (selected === 'nitro_boosted') {
+      const nitroEmbed = new EmbedBuilder()
+        .setTitle('🚀 Discord Nitro')
+        .setDescription(`
+**Instant & legal**
+
+## Nitro Boosts [ via login ] <a:Nitro_Boost:123456789012345678>
+<:boost:123> Nitro Boost 1 Month → **$6.5**  
+<:guild_booster_lvl9:123> Nitro Boost 12 Month → **$55.5**
+
+## Nitro Basic [ via login ] <a:Nitro_Basic:123456789012345678>
+<:NitroBasicWumpus:123> Nitro Basic 1 Month → **$1.99**  
+<:NitroWumpus:123> Nitro Basic 12 Month → **$22.5**
+
+## 💎 Payment methods: <:ltcbov:123> | <:ppbov:123>
+
+## 📊 Features
+<:p_check:123> Legally Paid  
+<:p_rocket:123> Fast activation within minutes  
+<:p_lock:123> We only log in to buy the product, then log out immediately—your privacy is fully protected  
+<:p_shield_check:123> We highly recommend enabling 2FA for extra protection  
+<:p_refresh:123> Full guarantee in case of any issue
+        `)
+        .setColor(0x5865F2);
+
+      await interaction.reply({ embeds: [nitroEmbed], ephemeral: true });
+    }
+  }
+});
+

@@ -123,14 +123,14 @@ client.on('interactionCreate', async (interaction) => {
         > <:plug_basic_wumpus:1374814681465884712> Nitro Basic - 1 Month <:plug_arrow:1374782493491728394> **$2**
         > <:plug_nitro_wumpus:1374815093551927347> Nitro Basic - 12 Months <:plug_arrow:1374782493491728394> **$20**
         <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-        <a:plug_trade:1374822992709943387> Payment methods: **USDT (TRC-20)** - only.
-
-## 📊 Features
-<:p_check:123> Legally Paid  
-<:p_rocket:123> Fast activation within minutes  
-<:p_lock:123> We only log in to buy the product, then log out immediately—your privacy is fully protected  
-<:p_shield_check:123> We highly recommend enabling 2FA for extra protection  
-<:p_refresh:123> Full guarantee in case of any issue
+        <a:plug_trade:1374822992709943387> Accepted Payments: **USDT (TRC-20)** - only.
+        <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+        <:plug_features:1385229242781925517> Why Choose NitroPlug
+        > <:plug_check:1374824992340054057> 100% Legitimate & Paid.
+        > <:plug_rocket:1374824938426597488> Delivery within minutes after order confirmation.
+        > <:plug_lock:1374824968160022538> We never keep credentials — login used once for purchase, then securely logged out.
+        > <:plug_shield_check:1374824939999465502> Strongly recommend enabling 2FA for your safety.
+        > <:plug_refresh:1374824936669057034> Full coverage & instant replacement if issues arise.
         `)
         .setColor(0x5865F2);
 

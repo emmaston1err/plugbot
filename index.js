@@ -309,6 +309,8 @@ client.on('interactionCreate', async (interaction) => {
   const summary = summaries[selected];
   if (!summary) return;
 
+  userSelections.set(interaction.user.id, selected);
+
   const summaryEmbed = new EmbedBuilder()
     .setTitle('<a:plug_loading:1385244121878237317> Order Details:')
     .setColor(0xe5a0fa)

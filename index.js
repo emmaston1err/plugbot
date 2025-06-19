@@ -112,19 +112,18 @@ client.on('interactionCreate', async (interaction) => {
 
     if (selected === 'nitro') {
       const nitroEmbed = new EmbedBuilder()
-        .setTitle('🚀 Discord Nitro')
-        .setDescription(`
-**Instant & legal**
-
-## Nitro Boosts [ via login ] <a:Nitro_Boost:123456789012345678>
-<:boost:123> Nitro Boost 1 Month → **$6.5**  
-<:guild_booster_lvl9:123> Nitro Boost 12 Month → **$55.5**
-
-## Nitro Basic [ via login ] <a:Nitro_Basic:123456789012345678>
-<:NitroBasicWumpus:123> Nitro Basic 1 Month → **$1.99**  
-<:NitroWumpus:123> Nitro Basic 12 Month → **$22.5**
-
-## 💎 Payment methods: <:ltcbov:123> | <:ppbov:123>
+        .setColor(0x8e44ad)
+        .setTitle('Discord Nitro')
+        .setDescription(`Safe, Fast & Verified
+        <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+        <a:plug_nitro:1374801855389106216> Nitro Boosts
+        > <:plug_boost:1374812787976700016> Nitro Boost - 1 Month <:plug_arrow:1374782493491728394> **$3**
+        > <:plug_booster:1374812926132752414> Nitro Boost - 12 Months <:plug_arrow:1374782493491728394> **$9**
+        <a:plug_nitro_basic:1374814151737868349> Nitro Basic
+        > <:plug_basic_wumpus:1374814681465884712> Nitro Basic - 1 Month <:plug_arrow:1374782493491728394> **$2**
+        > <:plug_nitro_wumpus:1374815093551927347> Nitro Basic - 12 Months <:plug_arrow:1374782493491728394> **$20**
+        <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+        <a:plug_trade:1374822992709943387> Payment methods: **USDT (TRC-20)** - only.
 
 ## 📊 Features
 <:p_check:123> Legally Paid  

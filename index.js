@@ -222,12 +222,12 @@ client.on('interactionCreate', async (interaction) => {
         .setPlaceholder('Click')
         .addOptions([
           {
-            label: '1M <:plug_arrow:1374782493491728394> $3',
+            label: '1M - $3',
             value: 'boost_1m',
             emoji: { name: 'plug_boost', id: '1374812787976700016' }
           },
           {
-            label: '12M <:plug_arrow:1374782493491728394> $9',
+            label: '12M - $9',
             value: 'boost_12m',
             emoji: { name: 'plug_booster', id: '1374812926132752414' }
           },
@@ -252,12 +252,12 @@ client.on('interactionCreate', async (interaction) => {
         .setPlaceholder('Click')
         .addOptions([
           {
-            label: '1M <:plug_arrow:1374782493491728394> $2',
+            label: '1M - $2',
             value: 'basic_1m',
             emoji: { name: 'plug_basic_wumpus', id: '1374814681465884712' }
           },
           {
-            label: '12M <:plug_arrow:1374782493491728394> $20',
+            label: '12M - $20',
             value: 'basic_12m',
             emoji: { name: 'plug_nitro_wumpus', id: '1374815093551927347' }
           },

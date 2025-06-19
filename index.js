@@ -110,7 +110,7 @@ client.on('interactionCreate', async (interaction) => {
   if (interaction.customId === 'select_product') {
     const selected = interaction.values[0];
 
-    if (selected === 'nitro_boosted') {
+    if (selected === 'nitro') {
       const nitroEmbed = new EmbedBuilder()
         .setTitle('🚀 Discord Nitro')
         .setDescription(`

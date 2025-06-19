@@ -151,3 +151,54 @@ client.on('interactionCreate', async (interaction) => {
   }
 });
 
+client.on('interactionCreate', async (interaction) => {
+  if (!interaction.isButton()) return;
+
+  if (interaction.customId === 'start_order') {
+    // 1. Πρώτο μήνυμα
+    await interaction.reply({
+      content: '🛒 Starting your order...',
+      ephemeral: true,
+    });
+
+    // 2. Embed με dropdown επιλογές
+    const orderEmbed = new EmbedBuilder()
+      .setTitle('📦 Nitro')
+      .setDescription('Please select the plan:')
+      .setColor(0xe5a0fa);
+
+    const planMenu = new ActionRowBuilder().addComponents(
+      new StringSelectMenuBuilder()
+        .setCustomId('select_nitro_plan')
+        .setPlaceholder('Click to choose')
+        .addOptions([
+          {
+            label: '1 Month Boost',
+            description: '$3',
+            value: 'boost_1m',
+          },
+          {
+            label: '12 Months Boost',
+            description: '$9',
+            value: 'boost_12m',
+          },
+          {
+            label: '1 Month Basic',
+            description: '$2',
+            value: 'basic_1m',
+          },
+          {
+            label: '12 Months Basic',
+            description: '$20',
+            value: 'basic_12m',
+          },
+        ])
+    );
+
+    await interaction.followUp({
+      embeds: [orderEmbed],
+      components: [planMenu],
+      ephemeral: true,
+    });
+  }
+});

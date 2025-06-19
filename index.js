@@ -83,7 +83,7 @@ client.once('ready', async () => {
           emoji: '<a:plug_nitro:1374801855389106216>',
         },
         {
-          label: 'Boosts',
+          label: 'Server Boost',
           description: 'Stable & Premium Boost Packages',
           value: 'boosts',
           emoji: '<a:plug_boosts:1374801892152053912>',
@@ -229,32 +229,27 @@ client.on('interactionCreate', async (interaction) => {
 
   if (interaction.customId === 'start_order_boost') {
   await interaction.reply({
-    content: '<a:plug_buy:1374809315525001301> Preparing your Boost order...',
+    content: '<a:plug_buy:1374809315525001301> Starting your order...',
     ephemeral: true,
   });
 
   const boostEmbed = new EmbedBuilder()
-    .setTitle('<a:plug_boosts:1374801892152053912> Boost Plans')
-    .setDescription(`Please select the Boost plan you want to purchase:
-> <:plug_boost:1374812787976700016> 1 Month Boost – **$3**  
-> <:plug_booster:1374812926132752414> 12 Months Boost – **$9**
-
-💸 Payment Method: **USDT (TRC-20)**
-`)
+    .setTitle('<a:plug_waiting:1375428227392208948> Boosts')
+    .setDescription(`Please choose a plan:`)
     .setColor(0xe5a0fa);
 
   const boostPlanMenu = new ActionRowBuilder().addComponents(
     new StringSelectMenuBuilder()
       .setCustomId('select_boost_plan')
-      .setPlaceholder('Select Boost Plan')
+      .setPlaceholder('Click')
       .addOptions([
         {
-          label: '1 Month – $3',
+          label: '1M – $10',
           value: 'boost_1m',
           emoji: { name: 'plug_boost', id: '1374812787976700016' },
         },
         {
-          label: '12 Months – $9',
+          label: '3M – $20',
           value: 'boost_12m',
           emoji: { name: 'plug_booster', id: '1374812926132752414' },
         },

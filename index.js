@@ -7,6 +7,8 @@ app.listen(PORT, () => console.log(`🌐 web server listening on port ${PORT}`))
 require('dotenv').config();
 const { Client, GatewayIntentBits, EmbedBuilder, ActionRowBuilder, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 
+const userSelections = new Map();
+
 const client = new Client({
   intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent],
 });
@@ -208,6 +210,7 @@ client.on('interactionCreate', async (interaction) => {
   const selected = interaction.values[0];
 
   if (selected === 'plan_nitro_boost') {
+    userSelections.set(interaction.user.id, selected);
     const boostEmbed = new EmbedBuilder()
       .setTitle('<a:plug_nitro:1374801855389106216> Nitro')
       .setDescription(`Please select a plan:
@@ -238,6 +241,7 @@ client.on('interactionCreate', async (interaction) => {
   }
 
   if (selected === 'plan_nitro_basic') {
+    userSelections.set(interaction.user.id, selected);
     const basicEmbed = new EmbedBuilder()
       .setTitle('<a:plug_nitro_basic:1374814151737868349> Nitro Basic')
       .setDescription(`Please select a plan:
@@ -331,11 +335,24 @@ client.on('interactionCreate', async (interaction) => {
   if (!interaction.isButton()) return;
   if (interaction.customId !== 'confirm_order') return;
 
+  // Πάρε την επιλογή του χρήστη
+const selectedPlan = userSelections.get(interaction.user.id) || 'custom';
+
+// Μετατροπή σε "καθαρό" ticket name
+const ticketNames = {
+  boost_1m: 'nitro-boost-1m',
+  boost_12m: 'nitro-boost-12m',
+  basic_1m: 'nitro-basic-1m',
+  basic_12m: 'nitro-basic-12m'
+};
+
+const ticketLabel = ticketNames[selectedPlan] || 'custom';
+
   const guild = interaction.guild;
   const member = interaction.member;
 
   const ticketChannel = await guild.channels.create({
-    name: `ticket-${member.user.username}`,
+    name: `ticket-${ticketLabel}`,
     type: 0,
     permissionOverwrites: [
       {
@@ -359,4 +376,7 @@ client.on('interactionCreate', async (interaction) => {
   });
 
   await ticketChannel.send(`👋 Hello ${member}, an agent will be with you shortly to complete your order.`);
+  userSelections.delete(interaction.user.id);
 });
+
+

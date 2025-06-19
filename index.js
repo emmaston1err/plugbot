@@ -172,7 +172,7 @@ client.on('interactionCreate', async (interaction) => {
         .addOptions([
   {
     label: 'Nitro',
-    description: 'Via Login',
+    description: 'Boosted Nitro Options',
     value: 'plan_nitro_boost',
     emoji: {
       name: 'plug_nitro',
@@ -181,8 +181,8 @@ client.on('interactionCreate', async (interaction) => {
     },
   },
   {
-    label: 'Nitro Basic',
-    description: 'Via Login',
+    label: 'Nitro',
+    description: 'Basic Nitro Options',
     value: 'plan_nitro_basic',
     emoji: {
       name: 'plug_nitro_basic',

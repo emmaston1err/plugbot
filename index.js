@@ -386,12 +386,13 @@ const ticketLabel = ticketNames[selectedPlan] || 'custom';
 
 const ticketEmbed = new EmbedBuilder()
   .setColor(0xe5a0fa)
-  .setTitle('<:plug_ticket:1374774141873295381> Your Order Ticket')
+  .setTitle('<:plug_ticket:1374774141873295381> Hello ${member}, thank you for your order!')
   .setDescription(`
-👋 Hello ${member}, thank you for your order!
-
-⏳ Please wait up to **5 minutes** for an agent to respond.
-🔐 All transactions are handled **securely and privately** here.
+ <:plug_arrow:1374782493491728394> Please wait for an agent to respond.
+ <:plug_arrow:1374782493491728394> All transactions are handled **securely and privately** here.
+ > ❌ Do not ping staff repeatedly.
+ > Be respectful.
+ > 🛑 Payments via TRC-20 only.
 
 If you wish to cancel or close this ticket, you can use the button below.
   `)
@@ -411,7 +412,7 @@ client.on('interactionCreate', async (interaction) => {
   const channel = interaction.channel;
 
   await interaction.reply({
-    content: '🔒 Ticket will be closed in 2 seconds...',
+    content: '❌ Ticket will be closed in 2 seconds...',
     ephemeral: true,
   });
 

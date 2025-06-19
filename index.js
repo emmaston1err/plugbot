@@ -154,11 +154,12 @@ client.on('interactionCreate', async (interaction) => {
     if (selected === 'boosts') {
   const boostEmbed = new EmbedBuilder()
     .setColor(0xe5a0fa)
-    .setTitle('Boosts')
-    .setDescription(`⚡ Stable, Premium Boost Packages Delivered Instantly.
-<:plug_boost:1374812787976700016> 1 Month – **$3**  
-<:plug_booster:1374812926132752414> 12 Months – **$9**  
-💸 Payment: **USDT (TRC-20)** only.`);
+    .setTitle('Server Boost')
+    .setDescription(`Stable, Premium Boost Packages Delivered Instantly.
+    > <a:plug_boosts:1374801892152053912> 14 Server Boosts - 1 Month <:plug_arrow:1374782493491728394> **$3**
+    > <a:plug_boosts:1374801892152053912> 14 Server Boosts - 3 Months <:plug_arrow:1374782493491728394> **$9**
+    <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
+    Payment: **USDT (TRC-20)** - only.`);
 
   const startOrderButton = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
@@ -458,7 +459,7 @@ const ticketEmbed = new EmbedBuilder()
  <:plug_arrow:1374782493491728394> All transactions are handled **securely and privately** here.
  > ❌ Do not ping staff repeatedly.
  > Be respectful.
- > 🛑 Payments via TRC-20 only.
+ > 🛑 Payments via TRC-20 - only.
  <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
  If you wish to cancel or close this ticket, you can use the button below.
   `)

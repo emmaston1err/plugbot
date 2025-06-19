@@ -285,22 +285,22 @@ client.on('interactionCreate', async (interaction) => {
   if (!summary) return;
 
   const summaryEmbed = new EmbedBuilder()
-    .setTitle('📦 Order Summary:')
-    .setColor(0x2ecc71)
+    .setTitle('<a:plug_loading:1385244121878237317> Order Details:')
+    .setColor(0xe5a0fa)
     .setDescription(`
-🔹 **Product:** ${summary.product}
-🔹 **Plan:** ${summary.plan}
-🔹 **Price:** ${summary.price}
-🔹 **Payment:** USDT (TRC-20)
-
-💡 Order will be completed via ticket.
+    ⤹🔹 Product: **${summary.product}**
+    ⤹🔹 Plan: **${summary.plan}**
+    ⤹🔹 Price: **${summary.price}**
+    ⤹🔹 Payment: **USDT (TRC-20)**
+    
+    ⚠️ Order will be completed via ticket. <a:plug_impression:1374779187918803004>
     `);
 
   const confirmButton = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
       .setCustomId('confirm_order')
       .setLabel('Confirm Order')
-      .setStyle(ButtonStyle.Success)
+      .setStyle(ButtonStyle.Secondary)
   );
 
   await interaction.reply({ embeds: [summaryEmbed], components: [confirmButton], ephemeral: true });

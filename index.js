@@ -377,8 +377,48 @@ const ticketLabel = ticketNames[selectedPlan] || 'custom';
     ephemeral: true
   });
 
-  await ticketChannel.send(`👋 Hello ${member}, an agent will be with you shortly to complete your order.`);
+  const closeButtonRow = new ActionRowBuilder().addComponents(
+  new ButtonBuilder()
+    .setCustomId('close_ticket')
+    .setLabel('Close Ticket')
+    .setStyle(ButtonStyle.Danger)
+);
+
+const ticketEmbed = new EmbedBuilder()
+  .setColor(0xe5a0fa)
+  .setTitle('<:plug_ticket:1374774141873295381> Your Order Ticket')
+  .setDescription(`
+👋 Hello ${member}, thank you for your order!
+
+⏳ Please wait up to **5 minutes** for an agent to respond.
+🔐 All transactions are handled **securely and privately** here.
+
+If you wish to cancel or close this ticket, you can use the button below.
+  `)
+  .setFooter({ text: 'NitroPlug Support', iconURL: client.user.displayAvatarURL() });
+
+await ticketChannel.send({
+  embeds: [ticketEmbed],
+  components: [closeButtonRow]
+});
   userSelections.delete(interaction.user.id);
 });
 
+client.on('interactionCreate', async (interaction) => {
+  if (!interaction.isButton()) return;
+  if (interaction.customId !== 'close_ticket') return;
+
+  const channel = interaction.channel;
+
+  await interaction.reply({
+    content: '🔒 Ticket will be closed in 2 seconds...',
+    ephemeral: true,
+  });
+
+  setTimeout(() => {
+    if (channel.deletable) {
+      channel.delete().catch(console.error);
+    }
+  }, 2000);
+});
 

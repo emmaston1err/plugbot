@@ -113,10 +113,10 @@ client.on('interactionCreate', async (interaction) => {
     if (selected === 'nitro') {
       const nitroEmbed = new EmbedBuilder()
         .setColor(0xe5a0fa)
-        .setTitle('Discord Nitro')
+        .setTitle('Nitro')
         .setDescription(`Safe, Fast & Verified.
         <a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932><a:plug_white_line:1374786910915919932>
-        <a:plug_nitro:1374801855389106216> Nitro Boost
+        <a:plug_nitro:1374801855389106216> Nitro
         > <:plug_boost:1374812787976700016> Nitro Boost - 1 Month <:plug_arrow:1374782493491728394> **$3**
         > <:plug_booster:1374812926132752414> Nitro Boost - 12 Months <:plug_arrow:1374782493491728394> **$9**
         <a:plug_nitro_basic:1374814151737868349> Nitro Basic
@@ -171,7 +171,7 @@ client.on('interactionCreate', async (interaction) => {
         .setPlaceholder('Click')
         .addOptions([
   {
-    label: 'Nitro Boost',
+    label: 'Nitro',
     description: 'Via Login',
     value: 'plan_nitro_boost',
     emoji: {
@@ -201,7 +201,6 @@ client.on('interactionCreate', async (interaction) => {
   }
 });
 
-// 📦 Handle selection of Nitro Boost or Nitro Basic plan
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isStringSelectMenu()) return;
   if (interaction.customId !== 'select_nitro_plan') return;
@@ -210,27 +209,25 @@ client.on('interactionCreate', async (interaction) => {
 
   if (selected === 'plan_nitro_boost') {
     const boostEmbed = new EmbedBuilder()
-      .setTitle('<a:plug_nitro:1374801855389106216> Nitro Boost Options')
-      .setDescription(`
-Please select the plan:
-
-> <:plug_boost:1374812787976700016> 1 Month — **$3**
-> <:plug_booster:1374812926132752414> 12 Months — **$9**
+      .setTitle('<a:plug_nitro:1374801855389106216> Nitro')
+      .setDescription(`Please select a plan:
+      > <:plug_boost:1374812787976700016> Nitro Boost - 1 Month <:plug_arrow:1374782493491728394> **$3**
+      > <:plug_booster:1374812926132752414> Nitro Boost - 12 Months <:plug_arrow:1374782493491728394> **$9**
 `)
       .setColor(0xe5a0fa);
 
     const boostMenu = new ActionRowBuilder().addComponents(
       new StringSelectMenuBuilder()
         .setCustomId('select_nitro_boost_plan')
-        .setPlaceholder('Choose Boost Duration')
+        .setPlaceholder('Click')
         .addOptions([
           {
-            label: '1 Month - $3',
+            label: '1M <:plug_arrow:1374782493491728394> $3',
             value: 'boost_1m',
             emoji: { name: 'plug_boost', id: '1374812787976700016' }
           },
           {
-            label: '12 Months - $9',
+            label: '12M <:plug_arrow:1374782493491728394> $9',
             value: 'boost_12m',
             emoji: { name: 'plug_booster', id: '1374812926132752414' }
           },
@@ -242,27 +239,25 @@ Please select the plan:
 
   if (selected === 'plan_nitro_basic') {
     const basicEmbed = new EmbedBuilder()
-      .setTitle('<a:plug_nitro_basic:1374814151737868349> Nitro Basic Options')
-      .setDescription(`
-Please select the plan:
-
-> <:plug_basic_wumpus:1374814681465884712> 1 Month — **$2**
-> <:plug_nitro_wumpus:1374815093551927347> 12 Months — **$20**
+      .setTitle('<a:plug_nitro_basic:1374814151737868349> Nitro Basic')
+      .setDescription(`Please select a plan:
+      > <:plug_basic_wumpus:1374814681465884712> Nitro Basic - 1 Month <:plug_arrow:1374782493491728394> **$2**
+      > <:plug_nitro_wumpus:1374815093551927347> Nitro Basic - 12 Months <:plug_arrow:1374782493491728394> **$20**
 `)
       .setColor(0xe5a0fa);
 
     const basicMenu = new ActionRowBuilder().addComponents(
       new StringSelectMenuBuilder()
         .setCustomId('select_nitro_basic_plan')
-        .setPlaceholder('Choose Basic Duration')
+        .setPlaceholder('Click')
         .addOptions([
           {
-            label: '1 Month - $2',
+            label: '1M <:plug_arrow:1374782493491728394> $2',
             value: 'basic_1m',
             emoji: { name: 'plug_basic_wumpus', id: '1374814681465884712' }
           },
           {
-            label: '12 Months - $20',
+            label: '12M <:plug_arrow:1374782493491728394> $20',
             value: 'basic_12m',
             emoji: { name: 'plug_nitro_wumpus', id: '1374815093551927347' }
           },
